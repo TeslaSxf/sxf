@@ -86,7 +86,7 @@ def heap_adjust(l, n, m):
         heap_adjust(l, greater, m)
 
 
-arr = list(range(200))
+arr = list(range(1000000))
 random.shuffle(arr)
 st = clock()
 arr = quick_sort(arr)
