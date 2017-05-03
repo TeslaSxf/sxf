@@ -15,9 +15,9 @@ class SXFsmtp:
                  user_='sxf0207@163.com',
                  pass_='cjy001229',
                  host_='smtp.163.com'):
-        self._user = user_
-        self._pass = pass_
-        self._host = host_
+        self.__user = user_
+        self.__pass = pass_
+        self.__host = host_
 
     def send(self, receivers, title, content, filename=None):
         try:
@@ -94,9 +94,9 @@ class SXFpop3(ParseContent):
                  user_='sxf0207@163.com',
                  pass_='cjy001229',
                  host_='pop.163.com'):
-        self._user = user_
-        self._pass = pass_
-        self._host = host_
+        self.__user = user_
+        self.__pass = pass_
+        self.__host = host_
 
     # get one mail, default the last mail
     def receive(self, index=1):
@@ -117,9 +117,17 @@ class SXFimap(ParseContent):
                  user_='sxf0207@163.com',
                  pass_='cjy001229',
                  host_='imap.163.com'):
-        self._user = user_
-        self._pass = pass_
-        self._host = host_
+        self.__user = user_
+        self.__pass = pass_
+        self.__host = host_
+
+    @property
+    def user(self):
+        return self.__user
+
+    @user.setter
+    def user(self, user_):
+        self.__user = user_
 
     # get one mail, default the last mail
     def reveive(self, index=1):
