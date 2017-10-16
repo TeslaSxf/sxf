@@ -15,9 +15,9 @@ class SXFsmtp:
                  user_='sxf0207@163.com',
                  pass_='cjy001229',
                  host_='smtp.163.com'):
-        self.__user = user_
-        self.__pass = pass_
-        self.__host = host_
+        self._user = user_
+        self._pass = pass_
+        self._host = host_
 
     def send(self, receivers, title, content, filename=None):
         try:
